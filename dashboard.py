@@ -55,9 +55,10 @@ def create_fig(df,xdata,ydata):
     plot.set_xticklabels(plot.get_xticklabels(),rotation = 30)
     return plot
 
-def create_hist(df1,xdata1):
+def create_hist(df1,xdata1,sub):
     fig, ax = plt.subplots()
-    ax.hist(df1[xdata1], bins=15)
+    ax.hist(df1[xdata1], bins=15, label='Days to convert')
+    plt.suptitle(sub)
     
     #sns.reset_defaults
     #sns.set_theme()
@@ -156,7 +157,7 @@ view = dp.View(
             ), columns=3
         ),
     dp.Select(
-        dp.Plot(create_hist(dfTimeLeadsVisited,'num_days'), label="Chart"),
+        dp.Plot(create_hist(dfTimeLeadsVisited,'num_days','Days to visit a lead'), label="Chart"),
         dp.DataTable(dfTimeLeadsVisited, label="Data"),
     ),
     ),
@@ -177,7 +178,7 @@ view = dp.View(
             ), columns=3
         ),
         dp.Select(
-        dp.Plot(create_hist(dfTimeLeadsConnect,'num_days'), label="Chart"),
+        dp.Plot(create_hist(dfTimeLeadsConnect,'num_days','Days to connect a lead'), label="Chart"),
         dp.DataTable(dfTimeLeadsConnect, label="Data"),
     ),
     dp.Text('Dasboard generated with datapane library'),
