@@ -1,4 +1,4 @@
--- Horacio Morales González
+-- Horacio Morales GonzÃ¡lez
 -- Problem 1
 -- Get how many classes are per department
 
@@ -17,7 +17,7 @@ from students;
 
 
 -- Problem 3
--- Get the list of students (id and name). That is enrolled on “Matematicas II”
+-- Get the list of students (id and name). That is enrolled on ï¿½Matematicas IIï¿½
 
 Select student_id
 	,name
@@ -41,7 +41,7 @@ where how_many > cupo;
 
 
 -- Problem 5
--- Get the list of professors that haven’t submitted one or more grades.
+-- Get the list of professors that havenï¿½t submitted one or more grades.
 select professor
 from classes where class_id not in (select distinct class_id
 									from grades A);
@@ -78,8 +78,8 @@ cross join lateral(
 --Ana	Literatura	pass
 --Ana	Laboratorio quimica	pass
 --Ana	Matematicas II	fail
---Ana	Ética	fail
+--Ana	ï¿½tica	fail
 --Silvia	Fisica	pass
---Silvia	Ética	pass
+--Silvia	ï¿½tica	pass
 --Silvia	Laboratorio quimica	pass
 --Gerardo	Laboratorio quimica	pass
