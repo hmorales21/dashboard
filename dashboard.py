@@ -80,6 +80,7 @@ def time_to_visit():
     group by A.lead_id
     having num_days < 1791;
     '''
+    #the maximun value is 1814 days, I took the next value jut to see the difference 
     return run_query(strQuery)
 
 def time_to_connect():
@@ -96,6 +97,7 @@ def time_to_connect():
     group by A.lead_id
     having num_days < 2262;
     '''
+    #the maximun value is 2404 days, I took the next value jut to see the difference 
     return run_query(strQuery)
 
 def isPositive(number):
